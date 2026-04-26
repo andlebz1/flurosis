@@ -1,0 +1,20 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# NHANES raw downloaded files (large, not needed for the app)
+nhanes_cache/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
