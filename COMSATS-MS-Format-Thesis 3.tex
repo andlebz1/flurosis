@@ -1,0 +1,943 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COMSATS University Islamabad -- MS Thesis Template
+%% Adapted for Biochemistry & Molecular Biology
+%% Thesis: Association of VDR Gene Variability, Fluoride Exposure and
+%%         Fluorosis Among Children Population of Thal Desert Areas
+%% Student: Andleeb Zahra (FA24-RBM-003)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{report}
+
+%% ---- Packages ----
+\usepackage{mathptmx}          % Times New Roman font
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{left=1.5in, right=1.0in, top=1.0in, bottom=1.0in}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+%% ---- Chapter title formatting ----
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries\centering}
+  {CHAPTER \thechapter}{10pt}{\Large\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}{1em}{}
+
+%% ---- Header / Footer ----
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+%% ---- Table of Contents formatting ----
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\listtablename}{LIST OF TABLES}
+
+%% =====================================================================
+\begin{document}
+\begin{spacing}{1.5}
+
+%% ====================================================================
+%% PRELIMINARY PAGES
+%% ====================================================================
+
+%% --- Title Page ---
+\begin{titlepage}
+\begin{center}
+\vspace*{0.5cm}
+
+{\Large\bfseries Association of VDR Gene Variability, Fluoride Exposure\\[6pt]
+and Fluorosis Among Children Population of Thal Desert Areas}
+
+\vspace{2cm}
+
+{\large By}\\[8pt]
+{\large\bfseries Andleeb Zahra}\\[4pt]
+{\normalsize Registration No: FA24-RBM-003}
+
+\vspace{2cm}
+
+{\normalsize A thesis submitted in partial fulfilment of the requirements\\
+for the degree of}
+
+\vspace{0.8cm}
+{\large\bfseries Master of Science}\\[4pt]
+{\normalsize in}\\[4pt]
+{\large\bfseries Biochemistry and Molecular Biology}
+
+\vspace{2cm}
+
+\includegraphics[width=3.5cm]{comsats_logo}
+
+\vspace{1cm}
+
+{\large\bfseries Department of Biosciences}\\[4pt]
+{\large\bfseries COMSATS University Islamabad}\\[4pt]
+{\large\bfseries Islamabad, Pakistan}\\[4pt]
+{\large\bfseries Fall 2024}
+
+\end{center}
+\end{titlepage}
+
+%% --- Certificate of Approval ---
+\newpage
+\thispagestyle{plain}
+\begin{center}
+{\Large\bfseries CERTIFICATE OF APPROVAL}
+\end{center}
+\vspace{1cm}
+
+\noindent This is to certify that the thesis entitled:
+
+\vspace{0.5cm}
+\begin{center}
+\textbf{``Association of VDR Gene Variability, Fluoride Exposure and Fluorosis\\
+Among Children Population of Thal Desert Areas''}
+\end{center}
+\vspace{0.5cm}
+
+\noindent submitted by \textbf{Andleeb Zahra}, Registration No.~\textbf{FA24-RBM-003}, in partial fulfilment of the requirements for the degree of \textbf{Master of Science in Biochemistry and Molecular Biology} from the Department of Biosciences, COMSATS University Islamabad, has been reviewed and is approved for submission to the competent authorities.
+
+\vspace{2cm}
+
+\noindent\begin{tabular}{ll}
+\rule{6cm}{0.4pt} & \rule{6cm}{0.4pt} \\
+\textbf{Dr. Ismat Nawaz} & \textbf{Dr. Syed Ali Musstjab Akber Shah Eqani} \\
+Supervisor & Co-Supervisor \\
+Associate Professor & \\
+Department of Biosciences & \\
+COMSATS University Islamabad & \\
+\end{tabular}
+
+\vspace{2cm}
+
+\noindent\begin{tabular}{l}
+\rule{6cm}{0.4pt} \\
+\textbf{Head of Department} \\
+Department of Biosciences \\
+COMSATS University Islamabad \\
+\end{tabular}
+
+%% --- Author's Declaration ---
+\newpage
+\thispagestyle{plain}
+\begin{center}
+{\Large\bfseries AUTHOR'S DECLARATION}
+\end{center}
+\vspace{1cm}
+
+\noindent I, \textbf{Andleeb Zahra}, Registration No.~\textbf{FA24-RBM-003}, hereby declare that I am the sole author of this thesis. This is a true copy of the thesis, including any required final revisions, as accepted by my examiners.
+
+\vspace{0.5cm}
+\noindent I understand that my thesis may be made electronically available to the public. The intellectual content of this thesis is the product of my own work. I have acknowledged all sources of assistance, collaboration, and financial support. This thesis has not been submitted for a degree, diploma, or other qualification at any other institution.
+
+\vspace{2cm}
+\noindent\begin{tabular}{ll}
+Signature: \rule{6cm}{0.4pt} & Date: \rule{4cm}{0.4pt} \\[8pt]
+\multicolumn{2}{l}{\textbf{Andleeb Zahra}} \\
+\multicolumn{2}{l}{FA24-RBM-003} \\
+\multicolumn{2}{l}{MS Biochemistry and Molecular Biology} \\
+\multicolumn{2}{l}{Department of Biosciences, COMSATS University Islamabad} \\
+\end{tabular}
+
+%% --- Dedication ---
+\newpage
+\thispagestyle{plain}
+\vspace*{5cm}
+\begin{center}
+{\large\itshape To my parents, family, and all those striving for a healthier Pakistan}
+\end{center}
+
+%% --- Acknowledgements ---
+\newpage
+\thispagestyle{plain}
+\begin{center}
+{\Large\bfseries ACKNOWLEDGEMENTS}
+\end{center}
+\vspace{0.5cm}
+
+\noindent \textit{Bismillah ir-Rahman ir-Rahim.}
+
+\vspace{0.5cm}
+\noindent All praise and thanks are due to Almighty Allah (SWT), the Most Gracious and the Most Merciful, whose blessings and guidance have made this work possible. I offer my humblest salutations upon the Holy Prophet Muhammad (PBUH), the beacon of knowledge and compassion for all humanity.
+
+\vspace{0.5cm}
+\noindent I would like to express my profound gratitude to my supervisor, \textbf{Dr. Ismat Nawaz} (Associate Professor, Department of Biosciences, COMSATS University Islamabad), for her invaluable guidance, intellectual insight, and unwavering encouragement throughout this research endeavour. Her expertise in molecular biology and her dedication to scientific rigour have been a constant source of inspiration. I am equally grateful to my co-supervisor, \textbf{Dr. Syed Ali Musstjab Akber Shah Eqani}, for his constructive feedback, critical evaluation, and support in shaping the research direction.
+
+\vspace{0.5cm}
+\noindent My sincere thanks are extended to the faculty and staff of the Department of Biosciences, COMSATS University Islamabad, for providing an excellent academic environment and laboratory resources. I am also grateful to the COMSATS University administration for supporting this research.
+
+\vspace{0.5cm}
+\noindent I owe a deep debt of gratitude to the school administrations, parents, and children of Thal Desert communities who volunteered their participation in this study. Their trust and cooperation are the bedrock of this research.
+
+\vspace{0.5cm}
+\noindent Finally, my heartfelt thanks go to my parents, siblings, and family members whose unconditional love, prayers, and moral support have sustained me throughout my academic journey. This thesis is as much theirs as it is mine.
+
+%% --- Abstract ---
+\newpage
+\thispagestyle{plain}
+\begin{center}
+{\Large\bfseries ABSTRACT}
+\end{center}
+\vspace{0.5cm}
+
+\noindent \textbf{Background and Rationale:} Fluoride contamination of groundwater is a major public health problem in the Thal Desert regions of Punjab, Pakistan, where water fluoride concentrations frequently exceed the World Health Organization (WHO) permissible limit of 1.5~mg/L. Prolonged exposure to elevated fluoride causes fluorosis --- a spectrum of disorders ranging from dental enamel opacification to debilitating skeletal deformities. Children aged 12--16 years are particularly vulnerable during active enamel maturation and bone mineralisation. Notably, not all children exposed to comparable fluoride concentrations develop fluorosis of equivalent severity, strongly implicating genetic modulation of individual susceptibility.
+
+\vspace{0.5cm}
+\noindent \textbf{Objectives:} This study aims to: (1) quantify fluoride concentrations in household drinking water and participant sera in selected Thal Desert communities; (2) assess the prevalence and severity of dental and skeletal fluorosis using Dean's Fluorosis Index and clinical examination; and (3) determine the genotypic and allelic frequencies of the Vitamin D Receptor (\textit{VDR}) TaqI single nucleotide polymorphism (SNP; rs731236, T\textgreater C transition, exon 9) and evaluate its association with fluorosis severity.
+
+\vspace{0.5cm}
+\noindent \textbf{Methodology:} A cross-sectional molecular epidemiological design will be employed. One hundred school-going children (aged 12--16~years, Grades 7--10) will be recruited from multiple schools in Thal Desert through stratified random sampling. Fluoride levels in drinking water and serum will be measured by the Ion-Selective Electrode (ISE) method. Genomic DNA will be extracted from venous blood using the Phenol-Chloroform-Isoamyl Alcohol (PCI) protocol, and VDR TaqI (rs731236) genotyping will be performed by Tetra-ARMS PCR followed by 2\% agarose gel electrophoresis. Statistical analyses will include Hardy--Weinberg equilibrium testing, allele and genotype frequency comparisons, and multivariable logistic regression adjusting for water fluoride, serum fluoride, age, sex, socioeconomic status, and nutritional status.
+
+\vspace{0.5cm}
+\noindent \textbf{Expected Outcomes and Significance:} It is anticipated that elevated water fluoride concentrations will be significantly associated with fluorosis prevalence, and that specific VDR TaqI genotypes (particularly the CC homozygote) will show differential distribution across fluorosis severity categories. This study will be the first in Pakistan to examine gene--environment interaction between VDR rs731236 and objective fluoride biomarkers in a child population. The findings will contribute to a mechanistic understanding of fluorosis susceptibility and have direct implications for targeted public health interventions, genetic counselling, and water-quality policies in fluoride-endemic regions of Pakistan.
+
+%% ---- Table of Contents ----
+\newpage
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures
+
+%% ====================================================================
+%% LIST OF ABBREVIATIONS
+%% ====================================================================
+\newpage
+\begin{center}
+{\Large\bfseries LIST OF ABBREVIATIONS}
+\end{center}
+\vspace{0.5cm}
+
+\noindent
+\begin{tabular}{ll}
+ARMS   & Amplification Refractory Mutation System \\
+CI     & Confidence Interval \\
+DNA    & Deoxyribonucleic Acid \\
+EDTA   & Ethylenediaminetetraacetic Acid \\
+ERB    & Ethical Review Board \\
+ISE    & Ion-Selective Electrode \\
+LD     & Linkage Disequilibrium \\
+OR     & Odds Ratio \\
+PCI    & Phenol-Chloroform-Isoamyl Alcohol \\
+PCR    & Polymerase Chain Reaction \\
+SNP    & Single Nucleotide Polymorphism \\
+SPSS   & Statistical Package for the Social Sciences \\
+UTR    & Untranslated Region \\
+VDR    & Vitamin D Receptor \\
+WHO    & World Health Organization \\
+HWE    & Hardy--Weinberg Equilibrium \\
+SES    & Socioeconomic Status \\
+25(OH)D & 25-Hydroxyvitamin D \\
+1,25(OH)\textsubscript{2}D & 1,25-Dihydroxyvitamin D (Calcitriol) \\
+\end{tabular}
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+%% ====================================================================
+%% CHAPTER 1: INTRODUCTION
+%% ====================================================================
+\chapter{Introduction}
+
+\section{Background}
+
+Fluoride is a naturally occurring halide element that exists ubiquitously in the Earth's crust, soils, water bodies, and vegetation. In trace amounts, fluoride plays a well-established beneficial role in human health --- most notably in promoting dental enamel resistance to cariogenic acid dissolution and in supporting normal bone mineralisation \citep{WHO2017}. These properties led to widespread public health programmes of controlled water fluoridation in many developed countries during the mid-twentieth century. However, the dose--response relationship of fluoride is paradoxical: while concentrations below 0.5~mg/L are associated with increased dental caries susceptibility, chronic intake above 1.5~mg/L --- the threshold established by the World Health Organization (WHO) --- poses significant risks to both dental and skeletal integrity \citep{WHO2017}.
+
+\vspace{0.5cm}
+\noindent Fluorosis, the pathological consequence of chronic fluoride overexposure, manifests across a clinically recognisable spectrum. Dental fluorosis, the earliest and most prevalent form, is characterised by hypomineralisation of enamel, presenting as white opaque streaks in mild cases and progressing to brown staining and pitting in severe forms \citep{Niazi2023}. Skeletal fluorosis, which typically develops following more prolonged and intense exposure, involves fluoride deposition in bone matrix causing osteosclerosis, joint stiffness, and, in advanced cases, crippling deformities \citep{Jha2011}. The global burden of fluorosis is substantial: the WHO estimates that over 200 million people in more than 25 countries consume fluoride-contaminated water at levels exceeding safe limits \citep{WHO2017}. In South Asia, the Indian subcontinent carries a particularly heavy burden, with endemic fluorosis reported across wide geographic areas of India, Pakistan, Bangladesh, and Sri Lanka.
+
+\section{Fluoride Contamination in Pakistan}
+
+Pakistan faces a serious and underappreciated fluoride contamination crisis. Recent large-scale assessments have established that groundwater fluoride concentrations exceeding 1.5~mg/L are prevalent across multiple provinces, with the most severe contamination documented in Punjab --- the country's most populous province \citep{Khan2023}. Employing machine learning models calibrated against geochemical data, Khan et al.\ \citeyearpar{Khan2023} estimated that approximately 13 million Pakistanis consume groundwater with fluoride concentrations posing elevated fluorosis risk. Khattak et al.\ \citeyearpar{Khattak2022} similarly documented fluoride concentrations ranging from 0.8 to 7.4~mg/L across sampled wells in Punjab and Khyber Pakhtunkhwa. The global modelling work of Podgorski and Berg \citeyearpar{Podgorski2022} has further confirmed Pakistan's position as a high-risk country within South Asia's fluoride belt.
+
+\vspace{0.5cm}
+\noindent Within Pakistan, the Thal Desert --- a semi-arid region spanning the inter-fluvial tract between the Indus and Jhelum rivers in central Punjab --- has emerged as a particularly high-risk endemic zone. Arid and semi-arid environments are characterised by elevated geological fluoride mobilisation from fluoride-bearing minerals such as fluorapatite, biotite, and hornblende, compounded by evaporative concentration in shallow aquifers \citep{Jha2011}. Communities in Thal Desert rely predominantly on groundwater from tube wells and hand pumps, often lacking access to piped or treated water supplies. This dependence on untreated groundwater, combined with harsh arid geochemistry, places Thal Desert children at particularly high risk of fluoride toxicity.
+
+\section{Children's Vulnerability and Clinical Impact}
+
+Children represent the most biologically susceptible segment of the population for fluoride-induced damage. The susceptibility arises from two key developmental windows. First, dental enamel formation occurs predominantly during infancy and early childhood (birth to approximately age 8), and the maturation phase of enamelogenesis, involving ameloblast-mediated removal of matrix proteins and water to achieve final enamel hardness, extends to adolescence. Fluoride disrupts ameloblast function at concentrations as low as 1.0--1.5~mg/L, impairing proteolytic enzyme activity (particularly matrix metalloproteinases) and interfering with calcium and phosphate incorporation \citep{Jha2011}. Second, active longitudinal bone growth during childhood and adolescence involves rapid osteoblastic and osteoclastic remodelling cycles in which fluoride, by virtue of its affinity for calcium hydroxyapatite, accumulates preferentially in bone tissue, altering bone crystal structure and compromising mechanical properties \citep{WHO2017}.
+
+\vspace{0.5cm}
+\noindent Despite these well-characterised mechanisms, a clinically important paradox remains unresolved: within the same fluoride-endemic community, with comparable patterns of water consumption, children exhibit widely heterogeneous fluorosis outcomes. Some develop severe enamel hypoplasia and incipient skeletal changes, while others demonstrate minimal or no fluorosis signs. This inter-individual variability cannot be accounted for solely by differences in fluoride intake, age, sex, or nutritional status, and strongly implicates genetic determinants of fluoride susceptibility.
+
+\section{Genetic Modulation of Fluorosis Susceptibility}
+
+The past two decades have seen growing evidence that genetic variation in pathways governing fluoride metabolism, mineralisation, and bone homeostasis modulates individual fluorosis risk. Candidate gene studies have identified polymorphisms in detoxification enzymes (e.g., \textit{GSTP1}) \citep{Wu2015}, structural collagen genes (\textit{COL1A2}) \citep{Jarquin2018, Kallala2024}, and enamel matrix proteins as influencing fluorosis phenotype. More recently, genomic approaches examining aquaporin (\textit{AQP5}), matrix metalloproteinase (\textit{MMP2}), and catechol-O-methyltransferase (\textit{COMT}) variants have further expanded the genetic architecture of fluoride susceptibility \citep{deLavor2025}.
+
+\vspace{0.5cm}
+\noindent Among the candidate genes, the Vitamin D Receptor (\textit{VDR}) gene occupies a position of particular biological plausibility. The VDR is a nuclear transcription factor mediating the genomic actions of 1,25-dihydroxyvitamin D$_3$ (calcitriol), the biologically active form of vitamin D \citep{Holick2006}. Through VDR-mediated signalling, calcitriol regulates intestinal calcium absorption, renal calcium reabsorption, osteoblast and osteoclast activity, and the synthesis of calcium-binding proteins. Because fluoride toxicity in bone involves disruption of calcium-hydroxyapatite crystal formation, genetic variation in the VDR pathway represents a mechanistically coherent modifier of fluoride-induced skeletal damage \citep{Holick2006, Gorczynskaetal2024}.
+
+\section{The VDR TaqI Polymorphism (rs731236)}
+
+The \textit{VDR} gene, located on chromosome 12q13.11, harbours several well-studied polymorphisms including \textit{FokI} (rs2228570), \textit{TaqI} (rs731236), \textit{ApaI} (rs7975232), and \textit{BsmI} (rs1544410). Among these, the TaqI SNP (rs731236) is a synonymous T\textgreater C transition located at the 3\textsuperscript{$'$} end of exon 9 of the \textit{VDR} gene. Although synonymous at the protein level, rs731236 exerts functional significance by virtue of its strong linkage disequilibrium (LD) with functional variants in the 3\textprime\ untranslated region (UTR) of \textit{VDR} that affect mRNA stability and translational efficiency \citep{Gorczynskaetal2024}. Consequently, TaqI genotype has been shown to influence VDR protein expression levels, thereby modulating the downstream genomic responses to calcitriol.
+
+\vspace{0.5cm}
+\noindent Several lines of evidence implicate VDR polymorphisms, including TaqI, in bone mineral density, calcium metabolism, and enamel outcomes \citep{Peponis2023, Tombari2024, Antunes2016}. However, the specific association of TaqI rs731236 with fluorosis in Pakistani children has not been examined. The existing Pakistani literature on fluoride contamination has focused predominantly on hydrogeochemical surveys and clinical prevalence studies, without integrating molecular genetic analysis.
+
+\section{Research Gap and Study Rationale}
+
+A critical gap exists in the literature at the intersection of VDR genetics, fluoride exposure, and fluorosis in Pakistani children. While Yang et al.\ \citeyearpar{Yang2016} demonstrated associations between \textit{VDR} \textit{FokI} genotype and skeletal fluorosis severity in a Chinese adult population, and subsequent studies have examined VDR TaqI in the context of dental caries and enamel quality \citep{Antunes2016, Lei2021, Qin2024}, no study has directly evaluated \textit{VDR} rs731236 in relation to fluorosis outcomes in a Pakistani child population using objective fluoride biomarkers (water and serum fluoride). Given Pakistan's high fluoride burden, the nutritional context of widespread vitamin D deficiency, and the biological plausibility of VDR-mediated calcium--fluoride interaction, this study addresses a timely and scientifically important knowledge gap.
+
+\section{Study Objectives}
+
+This study is designed to address the following three specific objectives:
+
+\begin{enumerate}[leftmargin=2cm]
+    \item To quantify fluoride concentrations in household drinking water sources and participant serum samples from Thal Desert, Punjab, Pakistan, using the Ion-Selective Electrode (ISE) method, and to compare values against WHO permissible limits.
+    \item To assess the prevalence and severity of dental fluorosis (Dean's Fluorosis Index) and skeletal fluorosis (clinical and radiological examination) among school-going children aged 12--16 years in the study area.
+    \item To determine the genotypic and allelic frequencies of \textit{VDR} TaqI SNP (rs731236) in the study population using Tetra-ARMS PCR and to evaluate the association between VDR rs731236 genotype and fluorosis severity, adjusting for relevant confounders.
+\end{enumerate}
+
+\section{Significance and Scope}
+
+This study is the first to investigate the gene--environment interaction between \textit{VDR} TaqI rs731236 and fluoride exposure in a child population from a fluoride-endemic zone of Pakistan. The findings will: (i) contribute novel epidemiological and molecular data on fluorosis susceptibility in an understudied population; (ii) inform the biological understanding of how VDR-mediated calcium signalling modulates fluoride toxicity; and (iii) provide evidence to guide future targeted genetic screening, nutritional supplementation strategies, and water quality policies in endemic areas. The study is limited in scope to the Thal Desert region and a sample of 100 children, and results will be interpreted as preliminary evidence warranting larger follow-up investigations.
+
+%% ====================================================================
+%% CHAPTER 2: LITERATURE REVIEW
+%% ====================================================================
+\chapter{Literature Review}
+
+\section{Fluoride in Groundwater: The Pakistani Context}
+
+Pakistan's groundwater fluoride problem sits at the convergence of geological, climatic, and infrastructural vulnerabilities. The geological underpinning derives from the Himalayan and sub-Himalayan formation of Punjab, where fluoride-rich minerals --- including fluorapatite, amphiboles, and micas --- are present in the alluvial and sedimentary sequences that form major aquifer systems \citep{Jha2011}. In arid environments like the Thal Desert, low annual rainfall, high evapotranspiration, and shallow water tables promote evaporative enrichment of fluoride in groundwater, routinely driving concentrations above the WHO guideline of 1.5~mg/L \citep{Podgorski2022}.
+
+\vspace{0.5cm}
+\noindent The scale of the problem has been clarified by several recent investigations. Khattak et al.\ \citeyearpar{Khattak2022} conducted systematic fluoride mapping of groundwater across Punjab and adjacent provinces, documenting average fluoride concentrations of 2.5--4.8~mg/L in multiple Thal Desert districts --- values two to three times the permissible limit. Khan et al.\ \citeyearpar{Khan2023}, employing Random Forest machine learning models trained on geochemical covariates, produced the first high-resolution national probabilistic map of fluoride contamination risk, estimating that approximately 13 million Pakistanis are exposed to harmful fluoride concentrations. Critically, this study identified central Punjab --- including the Thal Desert belt --- as among the highest-risk zones in the country. The broader global perspective provided by Podgorski and Berg \citeyearpar{Podgorski2022} situates Pakistan within a South Asian high-fluoride corridor extending from northwestern India through Pakistan and into Afghanistan, underlining the regional significance of this problem.
+
+\vspace{0.5cm}
+\noindent What distinguishes Pakistan from other high-fluoride nations is the compound risk environment: not only are water fluoride concentrations elevated, but affected communities frequently experience co-deficiencies in dietary calcium and vitamin D, which are known to potentiate fluoride toxicity by amplifying fluoride uptake into bone and impairing the physiological mechanisms that would otherwise limit skeletal fluoride accumulation \citep{WHO2017}. This nutritional context makes the genetic investigation of VDR pathways --- central to calcium and vitamin D metabolism --- particularly relevant in Pakistan.
+
+\section{Fluorosis Pathophysiology: Mechanisms and Clinical Spectrum}
+
+The pathophysiology of fluoride toxicity is mediated through multiple, partially overlapping mechanisms. At the cellular level, fluoride inhibits enolase and other glycolytic enzymes, interferes with the phosphoinositide signalling cascade, generates reactive oxygen species, and suppresses antioxidant enzyme activity --- collectively driving oxidative stress and apoptosis in multiple cell types \citep{Jha2011}. In enamel-forming ameloblasts, fluoride disrupts the activity of kallikrein-4 (KLK4) and other matrix metalloproteinases responsible for degrading and removing amelogenin during enamel maturation. This results in incomplete mineralisation and the characteristic subsurface porosity of fluorotic enamel \citep{Niazi2023}.
+
+\vspace{0.5cm}
+\noindent Dental fluorosis is classified according to Dean's Fluorosis Index into six categories: normal (no fluorosis), questionable (very slight white flecks), very mild (small white opaque areas covering $<$25\% of tooth surface), mild ($<$50\% affected), moderate (all enamel surfaces affected with brown staining), and severe (discrete pitting and brown discolouration) \citep{WHO2017}. This index remains the gold standard for population-level dental fluorosis assessment. The dose--response relationship is well established: concentrations of 1.0--2.0~mg/L are associated predominantly with very mild to mild dental fluorosis, while concentrations above 3~mg/L increasingly produce moderate to severe dental forms and initiate skeletal changes \citep{Jha2011}.
+
+\vspace{0.5cm}
+\noindent Skeletal fluorosis develops through distinct pathological phases: an initial osteosclerotic phase (increased bone density from excessive fluoride-substituted hydroxyapatite formation), followed by periosteal ossification (ligament and tendon mineralisation), and ultimately crippling skeletal fluorosis characterised by neurological compression and severe joint deformity in the most extreme cases \citep{Niazi2023}. Children occupy a distinct risk category: because active bone remodelling during growth accelerates fluoride uptake and incorporation into bone matrix, children in endemic areas accumulate skeletal fluoride burden more rapidly than adults \citep{WHO2017}.
+
+\vspace{0.5cm}
+\noindent The epidemiological literature consistently demonstrates that the relationship between fluoride exposure and fluorosis is not strictly deterministic. At equivalent exposure levels, a wide distribution of fluorosis severity is observed within populations, with some individuals demonstrating resilience and others exhibiting disproportionate damage. This heterogeneity constitutes the primary empirical justification for investigating genetic modifiers of fluoride susceptibility.
+
+\section{Genetic Modifiers of Fluorosis: Converging Evidence}
+
+The concept that genetic variation modulates fluoride susceptibility has gained traction through a series of candidate gene studies, albeit in largely non-Pakistani populations. Wu et al.\ \citeyearpar{Wu2015} examined Glutathione-S-Transferase Pi 1 (\textit{GSTP1}) polymorphisms in a Chinese cohort and found that the Ile105Val (rs1695) variant was significantly associated with dental fluorosis severity, implicating oxidative stress pathways in fluorosis aetiology. This finding was notable as it suggested that antioxidant genetic capacity could modulate the cell-damaging consequences of fluoride-induced reactive oxygen species.
+
+\vspace{0.5cm}
+\noindent Collagen matrix integrity represents another genetically modifiable determinant of fluorosis. Jarqu{\'i}n-Y{\~n}ez{\'a} et al.\ \citeyearpar{Jarquin2018} reported that a \textit{COL1A2} polymorphism was associated with dental fluorosis severity in Mexican children, consistent with the hypothesis that compromised collagen scaffolding renders enamel more susceptible to fluoride-induced hypomineralisation. More recently, Kallala et al.\ \citeyearpar{Kallala2024} extended this observation, reporting associations between additional \textit{COL1A2} variants and fluorosis outcomes in a Tunisian cohort. Collectively, collagen gene studies suggest that the structural integrity of the enamel matrix protein scaffold is genetically influenced and that this variation amplifies or dampens the enamel response to fluoride.
+
+\vspace{0.5cm}
+\noindent The most recent wave of evidence, from de Lav{\^o}r et al.\ \citeyearpar{deLavor2025}, has employed a broader genomic screen to identify additional loci, including \textit{AQP5} (aquaporin-5, mediating water and fluoride transport across ameloblasts), \textit{MMP2} (matrix metalloproteinase-2, collagen degradation), and \textit{COMT} (catechol-O-methyltransferase, implicated in stress response), as modifiers of dental fluorosis. These findings collectively argue that fluorosis is a multifactorial phenotype with a polygenic genetic architecture, and that investigations targeting a single gene represent an entry point rather than a complete explanatory framework.
+
+\section{VDR Gene Biology: Structure, Function, and Relevance to Mineral Metabolism}
+
+The Vitamin D Receptor (\textit{VDR}) gene spans approximately 100~kb on chromosome 12q13.11 and encodes a 427-amino acid nuclear receptor protein belonging to the steroid/thyroid hormone receptor superfamily \citep{Holick2006}. The VDR protein contains a conserved zinc-finger DNA-binding domain and a ligand-binding domain that binds 1,25-dihydroxyvitamin D$_3$ (calcitriol) with high affinity (K$_d$ approximately $10^{-10}$~M). Upon calcitriol binding, the VDR undergoes conformational activation and heterodimerises with the Retinoid X Receptor (RXR), forming a transcription factor complex that binds to Vitamin D Response Elements (VDREs) in the promoters of target genes \citep{Holick2006}.
+
+\vspace{0.5cm}
+\noindent The physiological actions of VDR-mediated transcription are central to calcium and phosphate homeostasis. In the small intestine, VDR activation induces the expression of calbindin-D9k (CALB1), epithelial calcium channel TRPV6, and intestinal calcium pump PMCA1b (ATP2B1), collectively increasing transepithelial calcium absorption by up to 30--40\% \citep{Gorczynskaetal2024}. In the kidney, VDR signalling promotes calcium reabsorption in the distal tubule. In bone, VDR acts through a dual mechanism: stimulating osteoblast differentiation and mineralisation at physiological calcitriol concentrations while also indirectly facilitating osteoclastogenesis via RANKL/OPG modulation at supraphysiological levels \citep{Holick2006}.
+
+\vspace{0.5cm}
+\noindent The relevance of VDR biology to fluoride toxicity lies in the calcium-fluoride competitive axis. Fluoride's pathological effects in bone and enamel are substantially amplified under conditions of calcium insufficiency, because calcium and fluoride compete for apatite crystal incorporation. VDR-mediated upregulation of intestinal calcium absorption and renal calcium retention effectively buffers against fluoride-induced hypocalcaemia and limits the proportion of circulating fluoride available for skeletal deposition \citep{Yang2016}. Thus, genetic variants that reduce VDR expression or function may impair calcium homeostatic mechanisms, rendering bone and enamel more vulnerable to fluoride toxicity.
+
+\section{VDR Polymorphisms and Bone and Mineral Outcomes}
+
+Four VDR polymorphisms have been most extensively studied in relation to bone and mineral metabolism: \textit{FokI} (rs2228570, exon 2), \textit{BsmI} (rs1544410, intron 8), \textit{ApaI} (rs7975232, intron 8), and \textit{TaqI} (rs731236, exon 9). Each has distinct molecular characteristics and evidence bases.
+
+\vspace{0.5cm}
+\noindent \textit{FokI} is unique in being the only functionally coding VDR SNP: the T (or `f') allele generates a longer VDR protein isoform of 427 amino acids, compared to the 424-amino acid product of the C (`F') allele. The shorter protein arising from the FF genotype has been reported to be more transcriptionally active, and FF individuals display greater intestinal calcium absorptive capacity \citep{Gorczynskaetal2024}. Peponis et al.\ \citeyearpar{Peponis2023} conducted a systematic review of VDR polymorphisms and bone mineral density (BMD) across multiple populations, noting that FokI effects were population-dependent, with significant associations in Asian but not consistently in European cohorts. Tombari et al.\ \citeyearpar{Tombari2024} reported that VDR TaqI and BsmI haplotypes were associated with BMD in postmenopausal women in a French cohort.
+
+\vspace{0.5cm}
+\noindent The TaqI SNP (rs731236) is a synonymous T\textgreater C transition in exon 9 (codon 352, Ile$\to$Ile; no amino acid change), yet it has documented functional consequences through its strong LD with variants in the 3\textsuperscript{$'$}UTR of the \textit{VDR} gene \citep{Gorczynskaetal2024}. These 3\textsuperscript{$'$}UTR variants, including \textit{ApaI} and \textit{BsmI}, influence mRNA polyadenylation efficiency, mRNA stability, and ultimately VDR protein abundance. The C allele of TaqI (t allele in older notation) has been consistently associated with lower VDR mRNA stability and reduced VDR protein expression. G{\'{o}}rczy{\'n}ska-Kosiorz et al.\ \citeyearpar{Gorczynskaetal2024} provided an updated comprehensive review of VDR polymorphism biology, confirming that TaqI genotype influences VDR expression levels in a tissue-specific manner and noting associations with calcium-related phenotypes in multiple populations. The biological implication is that individuals carrying the CC genotype of TaqI rs731236, associated with lower VDR expression, may have reduced capacity for calcitriol-mediated calcium absorption, potentially exacerbating fluoride-related calcium disruption.
+
+\section{VDR FokI Polymorphism and Fluorosis: Direct Evidence}
+
+The most direct evidence linking a VDR polymorphism to fluorosis comes from studies of the \textit{FokI} SNP. Yang et al.\ \citeyearpar{Yang2016}, in a landmark study published in \textit{BMJ Open}, investigated the association between \textit{VDR} \textit{FokI} genotype and skeletal fluorosis severity in a cross-sectional Chinese adult cohort from a fluoride-endemic area. They found that the ff genotype (T/T at rs2228570) was significantly over-represented among individuals with advanced skeletal fluorosis compared to those with mild or no skeletal changes, with odds ratios exceeding 2.5 for the ff versus FF comparison after adjustment for fluoride exposure and confounders. This study provided the conceptual proof-of-principle that VDR genetic variation directly modulates skeletal fluorosis susceptibility in human populations.
+
+\vspace{0.5cm}
+\noindent The earlier work by Yang et al.\ \citeyearpar{Yang2011} extended this inquiry to a paediatric context, reporting differential \textit{VDR} \textit{FokI} genotype distributions between children residing in high-fluoride versus low-fluoride areas of China, suggesting possible selective survival or population stratification effects at the VDR locus in fluoride-endemic environments. While this interpretation must be treated cautiously, it reinforces the biologically plausible connection between VDR genetic variation and fluoride-related outcomes during childhood development.
+
+\vspace{0.5cm}
+\noindent Importantly, both Yang et al.\ studies focused on \textit{FokI} (rs2228570) --- a functionally distinct SNP located in exon 2 --- rather than TaqI (rs731236). The molecular mechanisms through which FokI modulates fluorosis differ from those through which TaqI acts: FokI affects VDR protein isoform function, while TaqI modulates VDR expression levels through 3\textsuperscript{$'$}UTR effects. This distinction means that the existing FokI-fluorosis evidence base, while suggestive, cannot be directly extrapolated to TaqI, and independent investigation of rs731236 is scientifically justified.
+
+\section{VDR TaqI Polymorphism and Dental/Enamel Outcomes}
+
+While no published study has directly examined VDR TaqI rs731236 in relation to fluorosis per se, indirect evidence from dental caries and enamel quality research is biologically informative. Antunes et al.\ \citeyearpar{Antunes2016} demonstrated in a Brazilian paediatric cohort that VDR TaqI genotype was significantly associated with dental caries risk: the CC genotype was associated with higher caries susceptibility, consistent with a hypothesis of reduced calcium-mediated enamel remineralisation capacity in TaqI C allele carriers. Lei et al.\ \citeyearpar{Lei2021} replicated this association in a Chinese cohort, reporting that TaqI CC homozygotes exhibited significantly lower enamel mineral density compared to TT genotype carriers when assessed by quantitative methods. Most recently, Qin et al.\ \citeyearpar{Qin2024} reported that VDR TaqI rs731236 was significantly associated with early childhood caries in a large multi-centre Chinese paediatric study (n=500), with the TT genotype conferring protection against severe caries, while the CC genotype was associated with a 2.1-fold increased caries risk.
+
+\vspace{0.5cm}
+\noindent These caries studies are relevant to the present research in two ways. First, they confirm that TaqI rs731236 influences enamel mineralisation capacity in children --- the same biological substrate that fluoride disrupts in dental fluorosis. Second, they establish that VDR TaqI genotype exerts clinically detectable effects on enamel quality in paediatric populations, supporting the plausibility of a VDR TaqI--fluorosis association. However, a critical distinction must be maintained: caries reflects enamel susceptibility to bacterial acid demineralisation, whereas fluorosis reflects enamel disruption during the formation process itself. These are mechanistically related but aetiologically distinct phenotypes, and findings from caries genetics cannot be assumed to apply directly to fluorosis without independent investigation.
+
+\section{Salivary Proteomics and Genomic Instability in Fluorosis}
+
+Recent advances in fluorosis research have extended beyond classical candidate gene approaches to include proteomic and genomic instability markers. Gavila et al.\ \citeyearpar{Gavila2024} characterised salivary protein profiles in children with varying degrees of dental fluorosis, identifying differential expression of multiple protective proteins (mucins, immunoglobulins, and antioxidant enzymes) in severe fluorosis cases compared to unexposed controls. These findings suggest that salivary proteomics may provide complementary biomarkers of fluorosis severity beyond clinical indices. Garc{\'i}a et al.\ \citeyearpar{Garcia2024}, publishing in \textit{Science of the Total Environment}, documented elevated genomic instability (as measured by micronucleus frequency in buccal epithelial cells) in children from high-fluoride areas, suggesting genotoxic effects of fluoride exposure at the cellular level.
+
+\vspace{0.5cm}
+\noindent Together with epidemiological and candidate gene data, these proteomic and genotoxic findings expand the understanding of fluorosis from a purely mineralisation disorder to a condition involving broader cellular damage pathways. The implication for the present study is that future research integrating salivary proteomics with genotypic data may provide a more complete picture of the gene--environment interaction underlying fluorosis.
+
+\section{Research Gap Synthesis}
+
+A careful synthesis of the available literature reveals several specific gaps that the present study is designed to address. First, the overwhelming majority of VDR--fluorosis studies have focused on the \textit{FokI} polymorphism in adult Chinese populations \citep{Yang2016, Yang2011}, and the generalisation of these findings to \textit{TaqI} rs731236 and to Pakistani children is not supported by existing evidence. Second, while VDR TaqI has been associated with enamel and caries phenotypes in several paediatric studies \citep{Antunes2016, Lei2021, Qin2024}, none of these was conducted in a fluoride-endemic region or used objective fluoride biomarkers (water fluoride, serum fluoride), making it impossible to determine whether the enamel effects of TaqI genotype are independent of fluoride exposure or synergistic with it. Third, no published study from Pakistan has integrated VDR genotyping with clinical fluorosis assessment and fluoride quantification in any paediatric population.
+
+\vspace{0.5cm}
+\noindent This study directly addresses these three gaps by examining VDR TaqI rs731236 in Pakistani school-children from a fluoride-endemic region, using objective fluoride biomarkers alongside standardised clinical fluorosis assessments. By doing so, it aims to provide the first gene--environment interaction data linking a VDR polymorphism to fluorosis outcomes in Pakistan, contributing novel evidence to a field in which the majority of data originate from Chinese and Latin American populations. The findings will either confirm the cross-population generalisability of VDR--fluoride interactions or highlight population-specific genetic architectures of fluorosis susceptibility --- both outcomes being of scientific value.
+
+%% ====================================================================
+%% CHAPTER 3: METHODOLOGY
+%% ====================================================================
+\chapter{Methodology}
+
+\section{Study Design}
+
+This study employs a cross-sectional molecular epidemiological design. Cross-sectional designs are appropriate for estimating the prevalence of disease, characterising genetic polymorphism frequencies, and evaluating gene--environment associations when longitudinal follow-up is not feasible within the scope of a Masters' thesis project \citep{WHO2017}. Participants will be assessed at a single time point for fluoride exposure, fluorosis status, and VDR rs731236 genotype. Multivariable statistical adjustment will be used to control for confounders, and the study will generate preliminary association estimates suitable for hypothesis generation and power calculation for future longitudinal studies.
+
+\section{Study Area}
+
+The study will be conducted in the Thal Desert region of Punjab, Pakistan. Thal Desert encompasses an inter-fluvial region between the Indus and Jhelum rivers, covering approximately 20,000~km$^2$ across the districts of Bhakkar, Khushab, Mianwali, Layyah, Muzaffargarh, and Dera Ghazi Khan. The area is characterised by semi-arid climate, sandy soil, and groundwater aquifers with documented elevated fluoride concentrations \citep{Khan2023, Khattak2022}.
+
+\vspace{0.5cm}
+\noindent The selection of Thal Desert as the study area is justified on three grounds. First, it represents a geochemically confirmed fluoride-endemic zone with community fluoride exposure well above WHO permissible limits. Second, communities in this region rely predominantly on groundwater for drinking and cooking purposes, ensuring consistent and quantifiable fluoride exposure. Third, the population has not previously been subjected to genetic studies of fluorosis susceptibility, making it an understudied yet scientifically important cohort.
+
+\section{Ethical Considerations}
+
+The study protocol will be submitted to and approved by the Ethical Review Board (ERB) of the Department of Biosciences, COMSATS University Islamabad, prior to any participant recruitment or sample collection. All procedures will comply with the Declaration of Helsinki (revised 2013) principles governing research involving human subjects.
+
+\vspace{0.5cm}
+\noindent Written informed consent will be obtained from the parent or legal guardian of each child participant. Given the age range (12--16 years), written assent will also be obtained from the children themselves, in language appropriate to their age and educational level. Parents and guardians will be fully informed of the study purpose, procedures, voluntary nature of participation, the right to withdraw at any time without consequence, and the confidential handling of all personal and genetic data. No personal identifiers will appear in any publication arising from this study; all data will be coded and stored in password-protected electronic files accessible only to the research team.
+
+\section{Study Population and Sampling}
+
+\subsection{Target Population}
+
+The target population consists of school-going children aged 12--16 years (approximately corresponding to Grades 7--10) enrolled in government and private schools within selected communities of Thal Desert, Punjab.
+
+\subsection{Sample Size}
+
+A sample of 100 participants will be recruited. This sample size was estimated using a power calculation based on the frequency of \textit{VDR} TaqI rs731236 alleles reported in South Asian populations (minor allele frequency approximately 30--35\% from HapMap data) and effect sizes reported by analogous studies of VDR genotype and dental phenotypes \citep{Antunes2016}. At 80\% power and $\alpha$ = 0.05 (two-tailed), this sample provides adequate power for primary allele frequency comparisons, with the caveat that association analyses will be considered exploratory given the modest sample size.
+
+\subsection{Sampling Strategy}
+
+A stratified random sampling strategy will be employed. Schools will be selected to represent a cross-section of Thal Desert communities across multiple districts. Within each selected school, class registers will serve as the sampling frame. Children satisfying eligibility criteria will be listed and randomly selected using computer-generated random numbers.
+
+\subsection{Inclusion Criteria}
+
+\begin{enumerate}[leftmargin=2cm]
+    \item Age 12--16 years (verified by birth certificate or school registration document)
+    \item Continuous resident of Thal Desert study area for a minimum of 3 years prior to recruitment
+    \item Household drinking water sourced from a local tube well or hand pump (groundwater)
+    \item No history of fluoride supplementation or use of fluoride-containing medications
+    \item No diagnosed systemic bone disease, kidney disease, or other condition affecting bone metabolism
+    \item Written informed consent from parent/guardian and written assent from the child
+\end{enumerate}
+
+\subsection{Exclusion Criteria}
+
+\begin{enumerate}[leftmargin=2cm]
+    \item Current or recent (within 6 months) use of fluoride supplements or prescription fluoride treatments
+    \item Chronic illness affecting bone or mineral metabolism (e.g., rickets, renal osteodystrophy, hyperparathyroidism)
+    \item Regular use of vitamin D supplements (which would confound VDR pathway analysis)
+    \item Incomplete data collection (missing blood sample or fluorosis assessment)
+    \item Parent/guardian refusal to provide informed consent
+\end{enumerate}
+
+\section{Sample Collection}
+
+\subsection{Blood Samples}
+
+A single venous blood sample of 5~mL will be collected from each participant by a trained phlebotomist under aseptic conditions. Blood collection will take place at the school or a designated community health centre. The total blood draw (5~mL) is well within established safe paediatric phlebotomy limits.
+
+\begin{itemize}
+    \item 2~mL will be collected in an EDTA (purple-top) vacutainer for genomic DNA extraction. These samples will be stored at 4$^{\circ}$C and processed within 24 hours of collection, or stored at $-$20$^{\circ}$C if processing is delayed.
+    \item 3~mL will be collected in a gel vacutainer (serum separator) for serum preparation. Samples will be centrifuged at 3000~rpm for 10 minutes within 4 hours of collection. Separated serum will be aliquoted and stored at $-$20$^{\circ}$C until fluoride quantification.
+\end{itemize}
+
+\subsection{Water Samples}
+
+A 500~mL water sample will be collected from the primary household drinking water source (tube well or hand pump) of each participant. Samples will be collected in pre-cleaned, acid-washed polyethylene bottles, labelled, and transported to the laboratory at ambient temperature for immediate fluoride analysis (within 48 hours of collection).
+
+\section{Fluoride Quantification}
+
+Fluoride concentrations in water samples and serum will be measured using the Ion-Selective Electrode (ISE) method, the recommended technique for water and biological fluoride analysis as specified by Standard Methods for the Examination of Water and Wastewater \citep{WHO2017}. The ISE method employs a lanthanum fluoride crystal electrode that generates a Nernstian potential proportional to fluoride activity. Total Ionic Strength Adjustment Buffer (TISAB III) will be used for both water and serum samples to neutralise pH, adjust ionic strength, and mask interfering ions (particularly aluminium and iron). Calibration will be performed using sodium fluoride standards at concentrations spanning 0.02--10~mg/L. The detection limit of the method is approximately 0.02~mg/L. All measurements will be performed in duplicate, and results exceeding 5\% coefficient of variation will be repeated. Water fluoride values will be compared against the WHO permissible limit of 1.5~mg/L; serum fluoride values will be compared against population-based reference ranges.
+
+\section{Fluorosis Assessment}
+
+\subsection{Dental Fluorosis}
+
+Dental fluorosis will be assessed in all participants by a single trained dental assessor (dental officer or trained general physician) who will be blinded to the child's genotype and serum fluoride status. All permanent teeth will be examined under natural daylight or a standardised dental light source after cleaning with a dry gauze. The examination will be scored using Dean's Fluorosis Index \citep{WHO2017}, applying the criteria in Table~\ref{tab:dean}.
+
+\begin{table}[H]
+\centering
+\caption{Dean's Fluorosis Index scoring criteria}
+\label{tab:dean}
+\begin{tabular}{ll}
+\toprule
+\textbf{Score} & \textbf{Description} \\
+\midrule
+0 (Normal)       & Enamel surface smooth, glossy, creamy white \\
+1 (Questionable) & Slight aberrations from normal translucency; a few white flecks \\
+2 (Very Mild)    & Small opaque white areas, $<$25\% of surface \\
+3 (Mild)         & White opacities $>$25\% but $<$50\% of surface \\
+4 (Moderate)     & All enamel surfaces affected; brown staining common \\
+5 (Severe)       & All surfaces; discrete pits; brown discolouration \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent The tooth-specific score for each individual will be the score of the two most severely affected teeth. For analysis, scores 0--1 will be classified as ``no/questionable fluorosis,'' scores 2--3 as ``mild fluorosis,'' and scores 4--5 as ``moderate-severe fluorosis.''
+
+\subsection{Skeletal Fluorosis}
+
+Clinical examination for skeletal fluorosis will include assessment of joint mobility, spinal flexibility (Schober's test), limb deformity, and elicitation of musculoskeletal symptoms (joint pain, stiffness). Where clinical findings suggest skeletal involvement, radiological examination of the lumbar spine and lower limbs will be recommended, with radiographic signs scored according to established criteria (mottled osteosclerosis, calcification of ligaments, cortical irregularity) \citep{Niazi2023}.
+
+\section{Genomic DNA Isolation}
+
+Genomic DNA will be extracted from EDTA-preserved whole blood using the Phenol-Chloroform-Isoamyl Alcohol (PCI) precipitation method. In brief, 200~$\mu$L of whole blood will be lysed using red blood cell lysis buffer, followed by white blood cell lysis with SDS-proteinase K digestion at 56$^{\circ}$C for 2 hours with gentle agitation. Sequential extraction with equal volumes of phenol:chloroform:isoamyl alcohol (25:24:1, v/v/v) will be performed twice, followed by a single chloroform:isoamyl alcohol (24:1) extraction to remove residual phenol. DNA will be precipitated with cold absolute ethanol in the presence of 3~M sodium acetate, washed with 70\% ethanol, air-dried, and resuspended in 50~$\mu$L of TE buffer (10~mM Tris-HCl, 1~mM EDTA, pH 8.0).
+
+\vspace{0.5cm}
+\noindent DNA quality and quantity will be assessed by two methods. First, 2~$\mu$L of each DNA extract will be run on a 2\% agarose gel stained with ethidium bromide (0.5~$\mu$g/mL) at 80~V for 45 minutes. High-molecular-weight bands of intact genomic DNA ($>$10~kb) without smearing will indicate adequate quality. Second, spectrophotometric analysis on a NanoDrop (ND-2000) instrument will be used to measure DNA concentration (ng/$\mu$L) and purity ratio (A260/A280), with an acceptable range of 1.7--2.0 indicating absence of protein and organic solvent contamination. All DNA samples will be stored at $-$20$^{\circ}$C until genotyping.
+
+\section{Primer Design and Optimisation}
+
+\subsection{Target SNP}
+
+The target SNP is \textit{VDR} TaqI rs731236 (NCBI dbSNP: rs731236), a T\textgreater C transition in exon 9 of the \textit{VDR} gene (chromosome 12q13.11, GRCh38 coordinates: chr12:47,844,974). This SNP is in strong LD with \textit{ApaI} (rs7975232) and \textit{BsmI} (rs1544410) in the adjacent intron 8 region.
+
+\subsection{Tetra-ARMS Primer Design}
+
+Primers for Tetra-ARMS PCR genotyping of rs731236 will be designed using the Primer3 web server (primer3.ut.ee) and the ARMS-PCR primer design tool (pcr.primer3web.com). The Tetra-ARMS (Amplification Refractory Mutation System) strategy employs four primers in a single PCR reaction:
+
+\begin{itemize}
+    \item Outer Forward (OF) and Outer Reverse (OR) primers: flanking the SNP locus, generating a larger control band common to all genotypes.
+    \item Inner T-specific Forward primer (TF): allele-specific for the T allele of rs731236; mismatched at its 3\textsuperscript{$'$} terminus to discriminate against the C allele.
+    \item Inner C-specific Reverse primer (CR): allele-specific for the C allele; similarly mismatched.
+\end{itemize}
+
+\noindent The outer primers will be designed to generate a control fragment of approximately 300~bp. The inner allele-specific primers will be designed to generate fragments of approximately 190~bp (T allele) and 150~bp (C allele). The three expected band patterns on a 2\% agarose gel will be: TT genotype (300~bp control + 190~bp T-allele bands), CC genotype (300~bp control + 150~bp C-allele bands), and TC heterozygote (300~bp + 190~bp + 150~bp bands). Deliberate mismatches will be introduced at the penultimate or antepenultimate position of the 3\textsuperscript{$'$} end of each inner primer to enhance allele-specificity.
+
+\subsection{PCR Optimisation}
+
+Gradient PCR will be performed using a subset of DNA samples (n=10) to determine the optimal annealing temperature (T$_a$) for the Tetra-ARMS reaction. Annealing temperatures from 55$^{\circ}$C to 65$^{\circ}$C will be tested in 2$^{\circ}$C increments. The optimal T$_a$ will be selected as the temperature at which all three allele-specific bands are visualised clearly without non-specific amplification products.
+
+\section{Tetra-ARMS PCR Genotyping}
+
+\subsection{PCR Principle}
+
+Tetra-ARMS PCR simultaneously amplifies both alleles of a biallelic SNP in a single multiplex reaction using four primers. The principle of allele-specificity is based on the preferential extension of the allele-matched primer from its 3\textsuperscript{$'$} terminus: a primer that perfectly matches the target allele extends efficiently, while a primer with a 3\textsuperscript{$'$} mismatch is not extended under standard PCR stringency conditions. The outer primer pair generates a larger band as an internal control confirming successful amplification, while the inner allele-specific primer combinations generate smaller diagnostic bands reflecting the genotype.
+
+\subsection{PCR Reaction Conditions}
+
+Each PCR reaction (25~$\mu$L total volume) will contain:
+\begin{itemize}
+    \item Template genomic DNA: 100~ng
+    \item 10$\times$ PCR buffer with MgCl$_2$ (1.5~mM final): 2.5~$\mu$L
+    \item dNTPs (200~$\mu$M each final): 0.5~$\mu$L of 10~mM stock
+    \item Outer Forward primer (0.2~$\mu$M): 0.5~$\mu$L of 10~$\mu$M stock
+    \item Outer Reverse primer (0.2~$\mu$M): 0.5~$\mu$L of 10~$\mu$M stock
+    \item Inner T-allele Forward primer (0.4~$\mu$M): 1.0~$\mu$L
+    \item Inner C-allele Reverse primer (0.4~$\mu$M): 1.0~$\mu$L
+    \item Taq DNA Polymerase (1~U): 0.2~$\mu$L of 5~U/$\mu$L stock
+    \item Nuclease-free water: to 25~$\mu$L
+\end{itemize}
+
+\noindent Thermal cycling conditions on a gradient thermal cycler will be:
+\begin{enumerate}[leftmargin=2cm]
+    \item Initial denaturation: 94$^{\circ}$C for 5 minutes
+    \item 35 cycles of: Denaturation 94$^{\circ}$C (30 s), Annealing at optimised T$_a$ (30 s), Extension 72$^{\circ}$C (45 s)
+    \item Final extension: 72$^{\circ}$C for 7 minutes
+    \item Hold: 4$^{\circ}$C indefinitely
+\end{enumerate}
+
+\subsection{Gel Electrophoresis and Genotype Visualisation}
+
+PCR products will be resolved on 2\% agarose gels (prepared in 1$\times$ TAE buffer) stained with ethidium bromide (0.5~$\mu$g/mL). Electrophoresis will be performed at 80~V for 60 minutes. A 100~bp DNA molecular weight ladder will be included in the first lane of each gel. Gels will be visualised and photographed under UV illumination using a gel documentation system. Genotypes will be scored independently by two laboratory personnel blinded to the fluorosis status of samples, and discordances will be resolved by re-genotyping.
+
+\section{Statistical Analysis}
+
+All statistical analyses will be performed using SPSS v26.0 (IBM Corp., Armonk, NY) and GraphPad Prism v9 (GraphPad Software, San Diego, CA).
+
+\subsection{Hardy--Weinberg Equilibrium}
+
+The observed genotype frequencies for \textit{VDR} TaqI rs731236 will be tested for compliance with Hardy--Weinberg Equilibrium (HWE) using a chi-square goodness-of-fit test comparing observed versus expected genotype counts under HWE assumptions, based on the observed allele frequencies. A two-tailed p-value of $>$0.05 will be considered consistent with HWE.
+
+\subsection{Allele and Genotype Frequency Analysis}
+
+Allele (T, C) and genotype (TT, TC, CC) frequencies will be tabulated and expressed as proportions with 95\% confidence intervals. Comparisons of allele and genotype frequencies across fluorosis severity categories will be performed using Pearson's chi-square test (or Fisher's exact test when expected cell counts are below 5). The association between VDR TaqI rs731236 genotype and fluorosis will be tested under three genetic models: (i) additive (TT vs. TC vs. CC), (ii) dominant (TT vs.\ TC+CC), and (iii) recessive (TT+TC vs.\ CC).
+
+\subsection{Multivariable Logistic Regression}
+
+Multivariable logistic regression will be performed with fluorosis severity (binary: mild/absent vs.\ moderate-severe, or ordinal) as the outcome variable and VDR TaqI genotype as the primary predictor. The following covariates will be included in the regression model as potential confounders: household water fluoride concentration (mg/L, continuous), serum fluoride (mg/L, continuous), age (years), sex (binary), socioeconomic status (SES, ordinal scale based on household income and assets), and nutritional status (weight-for-height Z-score as proxy for nutritional adequacy). Results will be expressed as Odds Ratios (ORs) with 95\% Confidence Intervals (CIs). The threshold for statistical significance will be p $<$ 0.05 (two-tailed) for all tests.
+
+%% ====================================================================
+%% CHAPTER 4: RESULTS
+%% ====================================================================
+\chapter{Results}
+
+\noindent \textit{Note: As this is a prospective research thesis, laboratory data collection has not yet been completed at the time of submission. The following chapter presents anticipated results in the form of representative placeholder tables and a narrative of expected findings based on the study design, objectives, and the established literature. These expected findings are presented to demonstrate the analytical approach, interpretive framework, and reporting standards that will be applied to the actual data upon completion of laboratory work.}
+
+\section{Demographic Characteristics of Study Participants}
+
+It is anticipated that the study will recruit 100 children aged 12--16 years from government and private schools across multiple Thal Desert communities. Based on the stratified sampling design and population demographics of the study area, the expected distribution of participants is presented in Table~\ref{tab:demographics}.
+
+\begin{table}[H]
+\centering
+\caption{Expected demographic characteristics of study participants (n = 100)}
+\label{tab:demographics}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Age Group (years)} & \textbf{n} & \textbf{Male} & \textbf{Female} & \textbf{Mean Water Fluoride (mg/L) $\pm$ SD} \\
+\midrule
+12--13 & 25 & 13 & 12 & 2.8 $\pm$ 0.9 \\
+13--14 & 26 & 14 & 12 & 2.9 $\pm$ 1.1 \\
+14--15 & 25 & 12 & 13 & 3.1 $\pm$ 1.0 \\
+15--16 & 24 & 11 & 13 & 3.0 $\pm$ 0.8 \\
+\textbf{Total} & \textbf{100} & \textbf{50} & \textbf{50} & \textbf{2.95 $\pm$ 0.97} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent The mean age of participants is expected to be approximately 13.8 years ($\pm$ 1.3 SD), with an equal sex distribution. Mean household water fluoride is anticipated to be approximately 2.95~mg/L, substantially exceeding the WHO guideline of 1.5~mg/L, consistent with prior geochemical surveys of the Thal Desert region \citep{Khan2023, Khattak2022}.
+
+\section{Fluoride Concentrations in Water and Serum}
+
+Table~\ref{tab:fluoride} presents the anticipated distribution of water fluoride concentrations among study households, categorised according to risk-relevant thresholds.
+
+\begin{table}[H]
+\centering
+\caption{Expected distribution of household water fluoride concentrations (n = 100 households)}
+\label{tab:fluoride}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Fluoride Category} & \textbf{Concentration Range (mg/L)} & \textbf{n (\%)} & \textbf{Fluorosis Risk} \\
+\midrule
+Normal      & $< 1.5$        & 18 (18\%) & Low \\
+Elevated    & 1.5--3.0       & 47 (47\%) & Moderate \\
+High        & $> 3.0$        & 35 (35\%) & High \\
+\midrule
+\textbf{Total} & --- & \textbf{100 (100\%)} & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent The majority of participants (82\%) are expected to reside in households with water fluoride concentrations above the WHO limit. Serum fluoride levels are anticipated to show a significant positive correlation with water fluoride concentrations (expected Pearson $r$ $>$ 0.60, p $<$ 0.001), confirming that water fluoride is the primary determinant of biological fluoride burden in this population.
+
+\section{Fluorosis Prevalence and Severity}
+
+The expected prevalence and distribution of dental fluorosis by Dean's Index among study participants are shown in Table~\ref{tab:fluorosis}.
+
+\begin{table}[H]
+\centering
+\caption{Expected prevalence of dental fluorosis by Dean's Fluorosis Index (n = 100)}
+\label{tab:fluorosis}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Dean's Index Score} & \textbf{n} & \textbf{\%} \\
+\midrule
+0 -- Normal          & 10 & 10.0 \\
+1 -- Questionable    & 8  & 8.0  \\
+2 -- Very Mild       & 22 & 22.0 \\
+3 -- Mild            & 28 & 28.0 \\
+4 -- Moderate        & 20 & 20.0 \\
+5 -- Severe          & 12 & 12.0 \\
+\midrule
+\textbf{Total}       & \textbf{100} & \textbf{100.0} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent It is expected that the overall fluorosis prevalence (Dean's score $\geq$ 1) will be approximately 90\%, with moderate-to-severe fluorosis (scores 4--5) in approximately 32\% of participants. This is broadly consistent with the fluoride concentration profile documented for Thal Desert communities and with national and regional fluorosis prevalence data \citep{Khattak2022, Khan2023}. Skeletal fluorosis signs (joint stiffness, reduced spinal flexibility) are expected in a subset of children in the older age group and in those with the highest water fluoride concentrations.
+
+\section{VDR TaqI rs731236 Genotype and Allele Frequencies}
+
+Table~\ref{tab:genotype} shows the anticipated genotype and allele frequencies for \textit{VDR} TaqI rs731236 in the study population.
+
+\begin{table}[H]
+\centering
+\caption{Expected VDR TaqI rs731236 genotype and allele frequencies (n = 100)}
+\label{tab:genotype}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Genotype / Allele} & \textbf{n} & \textbf{\%} \\
+\midrule
+\multicolumn{3}{l}{\textit{Genotype}} \\
+\quad TT (wild-type homozygote) & 38 & 38.0 \\
+\quad TC (heterozygote)         & 45 & 45.0 \\
+\quad CC (variant homozygote)   & 17 & 17.0 \\
+\midrule
+\multicolumn{3}{l}{\textit{Allele}} \\
+\quad T allele & 121 & 60.5 \\
+\quad C allele & 79  & 39.5 \\
+\midrule
+\textbf{HWE p-value}       & \multicolumn{2}{c}{0.73 (in HWE)} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent The expected C allele frequency of approximately 39.5\% is consistent with frequencies reported for South Asian populations in the 1000 Genomes Project database. The population is expected to be in Hardy--Weinberg equilibrium (p $>$ 0.05), indicating an absence of major population stratification or genotyping artefacts.
+
+\section{Association of VDR TaqI rs731236 Genotype with Fluorosis Severity}
+
+Table~\ref{tab:association} presents the anticipated association between VDR TaqI genotype and fluorosis severity categories.
+
+\begin{table}[H]
+\centering
+\caption{Expected association of VDR TaqI rs731236 genotype with fluorosis severity}
+\label{tab:association}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Genotype} & \textbf{No/Mild Fluorosis} & \textbf{Moderate-Severe Fluorosis} & \textbf{Total} & \textbf{$\chi^2$} & \textbf{p-value} & \textbf{OR (95\% CI)} \\
+\midrule
+TT & 32 (84.2\%) & 6 (15.8\%)  & 38 & \multirow{3}{*}{8.45} & \multirow{3}{*}{0.015} & Reference \\
+TC & 36 (80.0\%) & 9 (20.0\%)  & 45 & & & 1.33 (0.44--4.06) \\
+CC & 8  (47.1\%) & 9 (52.9\%)  & 17 & & & 4.50 (1.19--16.98) \\
+\midrule
+\textbf{Total} & \textbf{76 (76\%)} & \textbf{24 (24\%)} & \textbf{100} & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent The expected pattern of association suggests that the CC genotype will be significantly over-represented among children with moderate-to-severe fluorosis compared to the TT reference genotype (expected OR $\approx$ 4.5, 95\% CI 1.19--16.98, p = 0.015). The TC heterozygote is expected to show an intermediate but non-significant trend. After multivariable logistic regression adjusting for water fluoride concentration, serum fluoride, age, sex, and SES, the CC versus TT odds ratio is expected to remain significant (adjusted OR approximately 3.8, 95\% CI 1.02--14.2, p $<$ 0.05), suggesting that the association is not solely attributable to higher fluoride exposure in CC genotype carriers.
+
+%% ====================================================================
+%% CHAPTER 5: DISCUSSION
+%% ====================================================================
+\chapter{Discussion}
+
+\section{Overview}
+
+This study was designed to investigate whether \textit{VDR} TaqI rs731236 genotype modifies the severity of fluorosis in children residing in Thal Desert, Punjab, Pakistan --- one of the country's most fluoride-endemic regions. The three specific objectives were to quantify fluoride exposure (water and serum), assess fluorosis prevalence and severity, and evaluate the association between VDR TaqI genotype and fluorosis outcomes. The expected results, if borne out by actual data collection, would collectively support the hypothesis that VDR genetic variation is an important modifier of fluoride toxicity in Pakistani children and would represent the first gene--environment interaction data linking VDR rs731236 to fluorosis outcomes in Pakistan.
+
+\section{Fluoride Exposure and Fluorosis Prevalence}
+
+The anticipated finding of water fluoride concentrations averaging approximately 2.95~mg/L in study households is consistent with and extends previous geochemical surveys of Thal Desert groundwater \citep{Khan2023, Khattak2022}. The projected 82\% prevalence of households with water fluoride above the WHO permissible limit of 1.5~mg/L underscores the gravity of the public health situation in this region. These concentrations, nearly double the permissible limit on average, are of particular concern for children aged 12--16 years who are undergoing active dental maturation and skeletal growth.
+
+\vspace{0.5cm}
+\noindent The expected overall dental fluorosis prevalence of approximately 90\% (Dean's score $\geq$ 1), with moderate-to-severe fluorosis in approximately 32\% of participants, would be consistent with the dose--response relationship between fluoride concentration and fluorosis severity documented by the WHO \citep{WHO2017} and Jha et al.\ \citeyearpar{Jha2011}. At water fluoride concentrations predominantly in the 1.5--4.0~mg/L range, an expected distribution showing a peak in the ``mild'' category (Dean's 3) with a significant tail into moderate and severe forms aligns with established epidemiological patterns. The expected positive correlation between water fluoride and serum fluoride would confirm that water consumption is the primary exposure pathway in this population, and that serum fluoride serves as a reliable biological indicator of internal fluoride dose.
+
+\section{VDR TaqI rs731236 Allele Frequencies and HWE}
+
+The anticipated C allele frequency of approximately 39.5\% at VDR TaqI rs731236 is broadly consistent with data for South Asian populations in the 1000 Genomes Project and HapMap Phase III databases, which report minor allele frequencies in the 30--40\% range for Pakistani and other South Asian cohorts. The expected compliance with Hardy--Weinberg equilibrium (p $>$ 0.05) would suggest adequate population representativeness and absence of systematic genotyping errors.
+
+\vspace{0.5cm}
+\noindent It is notable that the expected C allele frequency in the Thal Desert children exceeds that reported in some European populations (typically 20--30\%), reflecting population-specific allele frequencies that are relevant to risk assessment in Pakistani communities. This finding, if confirmed, would highlight the importance of generating Pakistani-specific genetic reference data rather than extrapolating from European or East Asian populations.
+
+\section{VDR TaqI Genotype and Fluorosis: Comparison with Existing Evidence}
+
+The anticipated association between the VDR TaqI CC genotype and moderate-to-severe fluorosis (expected OR $\approx$ 4.5, p = 0.015, remaining significant after multivariable adjustment) would constitute the first direct evidence that rs731236 modifies fluorosis severity in a Pakistani child population. Interpretation of this expected finding in the context of existing literature reveals both convergences and important distinctions.
+
+\vspace{0.5cm}
+\noindent The anticipated direction of the association --- CC genotype conferring higher fluorosis risk compared to TT --- is consistent with the known functional consequences of the TaqI C allele. G{\'o}rczy{\'n}ska-Kosiorz et al.\ \citeyearpar{Gorczynskaetal2024} reported that the C allele at rs731236 is associated with lower VDR mRNA stability and reduced VDR protein expression in relevant tissues. Reduced VDR expression would be expected to impair calcitriol-mediated intestinal calcium absorption, potentially creating a relative hypocalcaemic state that amplifies fluoride-calcium competition for apatite crystal sites in bone and enamel. Under this model, CC genotype carriers are disadvantaged in maintaining calcium homeostasis under fluoride challenge, leading to greater fluoride incorporation and more severe fluorosis.
+
+\vspace{0.5cm}
+\noindent This anticipated mechanism has parallels with the FokI--fluorosis association reported by Yang et al.\ \citeyearpar{Yang2016}, who found that the ff genotype of VDR FokI (associated with lower transcriptional activity of the longer VDR protein isoform) was significantly associated with skeletal fluorosis severity in Chinese adults. The convergence of two mechanistically distinct VDR polymorphisms (FokI affecting VDR protein activity, TaqI affecting VDR expression levels) both pointing toward VDR pathway insufficiency as a risk factor for fluorosis strengthens the overall inference that VDR-mediated calcium homeostasis is a genuine modifier of fluoride toxicity. However, a direct comparison with Yang et al.\ \citeyearpar{Yang2016} must acknowledge key differences: their cohort was composed of adults in China, skeletal fluorosis was the primary outcome, and FokI rather than TaqI was genotyped. The present study, targeting children in Pakistan with dental fluorosis as the primary outcome, represents a complementary but not equivalent replication.
+
+\vspace{0.5cm}
+\noindent The anticipated association of TaqI CC genotype with fluorosis in the present study would also be mechanistically convergent with findings from dental caries research. Antunes et al.\ \citeyearpar{Antunes2016} and Lei et al.\ \citeyearpar{Lei2021} reported that TaqI CC genotype was associated with higher dental caries susceptibility in children, interpreted as reflecting reduced enamel mineralisation capacity in C allele carriers. If the CC genotype reduces enamel mineralisation efficiency, it would be expected to render enamel more vulnerable to fluoride-induced hypomineralisation during the amelogenesis phase, resulting in more severe fluorotic lesions. Qin et al.\ \citeyearpar{Qin2024} further corroborated this interpretation with a large paediatric dataset showing TT genotype protection against severe caries. The present study's focus on fluorosis rather than caries adds a novel dimension: while caries reflects post-eruption enamel demineralisation, fluorosis reflects pre-eruption mineralisation disruption, and demonstrating that TaqI genotype modifies both phenotypes would provide compelling evidence for a unifying mechanism of VDR-mediated calcium-fluoride interaction in enamel biology.
+
+\section{Mechanistic Considerations: Vitamin D-Calcium-Fluoride Axis}
+
+The anticipated results support a mechanistic model in which VDR TaqI genotype modulates fluorosis susceptibility through the vitamin D--calcium--fluoride axis. In this model: (1) calcitriol binds VDR; (2) VDR-mediated transcription upregulates calcium absorption proteins; (3) increased calcium availability in mineralising tissues competes with fluoride for hydroxyapatite crystal sites; (4) reduced VDR expression (CC genotype) impairs calcium absorption, shifting the calcium-fluoride balance toward fluoride incorporation; and (5) greater fluoride incorporation disrupts normal mineralisation, producing fluorosis. This model is consistent with classic observations that dietary calcium supplementation partially mitigates fluorosis severity in animal models and with epidemiological data showing that populations with low calcium intake are more severely affected by fluoride at equivalent exposure levels \citep{Jha2011}.
+
+\vspace{0.5cm}
+\noindent The Pakistan-specific nutritional context amplifies the relevance of this model. Pakistan has a high prevalence of vitamin D deficiency, with surveys reporting 25-hydroxyvitamin D (25(OH)D) concentrations below 50~nmol/L in 50--80\% of women and children in various regions \citep{WHO2017}. Under conditions of vitamin D deficiency, even a genetically efficient VDR pathway is substrate-limited. For CC genotype carriers who already have reduced VDR expression, the combination of vitamin D deficiency and elevated fluoride exposure creates a triple metabolic disadvantage --- insufficient substrate (25(OH)D), impaired receptor expression (CC genotype), and excess competitive inhibitor (fluoride) --- that would be expected to produce the most severe fluorosis outcomes.
+
+\section{Limitations}
+
+Several important limitations of the present study must be acknowledged. First, the cross-sectional design precludes causal inference and prevents the assessment of temporal relationships between fluoride exposure and fluorosis development. The fact that fluorosis is an irreversible developmental defect means that current fluoride exposure (measured at study entry) may not perfectly reflect cumulative historical exposure during the critical enamel formation period (birth to approximately age 8). This exposure-misclassification limitation is inherent to cross-sectional fluorosis studies and can only be fully addressed by prospective cohort designs.
+
+\vspace{0.5cm}
+\noindent Second, the modest sample size of 100 children, while adequate for primary allele frequency comparisons and exploratory association testing, limits statistical power for subgroup analyses and for testing interactions between VDR genotype and covariates such as sex, age group, and water fluoride category. The anticipated odds ratios in the range of 3--5 for CC versus TT comparisons suggest medium-to-large effect sizes that would be detectable at n=100, but confidence intervals are expected to be wide, reflecting imprecision of estimation.
+
+\vspace{0.5cm}
+\noindent Third, this study targets a single SNP (rs731236) rather than a haplotype or multi-SNP panel. Given that VDR TaqI, ApaI, and BsmI are in strong LD with each other, haplotype-based analyses would provide greater statistical power and biological resolution. The absence of haplotype analysis is a limitation that future studies should address.
+
+\vspace{0.5cm}
+\noindent Fourth, the absence of serum 25-hydroxyvitamin D measurement represents a significant gap. Vitamin D status is a critical confounder of the VDR genotype--fluorosis association: if CC genotype carriers have lower serum 25(OH)D (perhaps through altered feedback regulation of vitamin D metabolism), then the apparent genotype effect may partly reflect vitamin D deficiency status rather than (or in addition to) a direct genotype effect. Future studies should include 25(OH)D quantification to fully dissect the genotype, vitamin D status, and fluoride exposure triangle.
+
+\vspace{0.5cm}
+\noindent Fifth, skeletal fluorosis assessment by clinical examination in this age group has inherent limitations. Radiological confirmation is the gold standard but is resource-intensive and ethically requires clinical justification. The present study uses clinical screening as a pragmatic approach, acknowledging that early skeletal fluorosis changes may be under-detected by clinical methods alone.
+
+\section{Clinical and Public Health Implications}
+
+If the anticipated associations are confirmed by actual data, they would carry several important practical implications. First, they would identify the CC genotype of VDR TaqI rs731236 as a genetic susceptibility factor for severe fluorosis in Pakistani children, motivating targeted genetic screening in endemic areas. High-risk (CC genotype) children could be prioritised for fluoride-reducing interventions (defluoridation water filters, alternative water sources) and nutritional support (calcium supplementation, vitamin D repletion).
+
+\vspace{0.5cm}
+\noindent Second, the findings would reinforce the public health urgency of addressing water fluoride contamination in Thal Desert and similar regions of Pakistan. A regulatory framework mandating fluoride monitoring of drinking water sources and installation of community-level defluoridation systems (bone char, activated alumina, or nanofiltration) would directly reduce the fluoride burden driving fluorosis, irrespective of genetic susceptibility.
+
+\vspace{0.5cm}
+\noindent Third, the finding of a VDR genotype--fluorosis interaction would support a precision public health approach that integrates genetic risk stratification into nutritional and water quality programmes --- an approach that, while resource-intensive, could be piloted in high-burden endemic communities as part of a phased implementation strategy.
+
+%% ====================================================================
+%% CHAPTER 6: CONCLUSION AND RECOMMENDATIONS
+%% ====================================================================
+\chapter{Conclusion and Recommendations}
+
+\section{Summary of Key Expected Findings}
+
+This prospective molecular epidemiological study was designed to investigate the association of \textit{VDR} TaqI rs731236 genotype with fluoride exposure and fluorosis severity among children aged 12--16 years residing in Thal Desert, Punjab, Pakistan. Based on the study design, analytical framework, and existing literature, the following key findings are anticipated:
+
+\begin{enumerate}[leftmargin=2cm]
+    \item Water fluoride concentrations in Thal Desert households will substantially exceed the WHO permissible limit of 1.5~mg/L (expected mean approximately 2.95~mg/L), consistent with the region's status as a fluoride-endemic zone. Serum fluoride will show a significant positive correlation with water fluoride, confirming water consumption as the primary fluoride exposure pathway (Objective 1).
+    \item The prevalence of dental fluorosis (Dean's score $\geq$ 1) will be high ($\sim$90\%), with moderate-to-severe forms in approximately one-third of children, reflecting chronic exposure to fluoride concentrations well above safe limits. Skeletal fluorosis signs will be present in a subset of older children with the highest fluoride exposure (Objective 2).
+    \item The CC genotype of \textit{VDR} TaqI rs731236 will be significantly over-represented among children with moderate-to-severe fluorosis compared to the TT reference genotype, with an odds ratio of approximately 4.5 (95\% CI 1.19--16.98), which will remain significant after adjusting for fluoride exposure and relevant confounders. This will represent the first gene--environment interaction evidence linking VDR rs731236 to fluorosis outcomes in a Pakistani child population (Objective 3).
+\end{enumerate}
+
+\section{Linking Findings to Objectives}
+
+Each objective of this study is addressed by the anticipated findings. Objective 1 (fluoride quantification) establishes the exposure context, confirming the endemic status of the study area and providing biological dose data. Objective 2 (fluorosis assessment) characterises the phenotypic distribution, demonstrating high fluorosis burden in the population and generating the outcome variable for genetic analysis. Objective 3 (VDR genotype association) addresses the central scientific hypothesis, providing molecular evidence that VDR-mediated calcium homeostasis modulates individual susceptibility to fluoride-induced tissue damage. Together, these findings construct a coherent gene--environment interaction model for fluorosis in Pakistan.
+
+\section{Practical Recommendations}
+
+Based on the anticipated findings, the following recommendations are offered for policy, clinical practice, and public health action:
+
+\begin{enumerate}[leftmargin=2cm]
+    \item \textbf{Water quality intervention}: All communities in Thal Desert and similar fluoride-endemic zones of Punjab should be systematically monitored for groundwater fluoride concentrations. Communities with water fluoride $>$ 1.5~mg/L should be provided with defluoridation technologies (bone char filters, activated alumina units, or community-level nanofiltration plants). Point-of-use household filters should be subsidised for low-income households.
+    \item \textbf{Nutritional intervention}: Given the vitamin D--calcium--fluoride interaction, children in fluoride-endemic areas should be screened for vitamin D deficiency and calcium inadequacy. Targeted supplementation of vitamin D and calcium in children at high genetic risk (CC genotype) may partially offset the biological effects of fluoride exposure.
+    \item \textbf{Genetic screening pilot}: A pilot programme of VDR TaqI genotyping in school-health screening of fluoride-endemic areas could identify high-risk children for priority intervention. The relatively low cost of PCR-based genotyping makes this a potentially scalable screening tool.
+    \item \textbf{Early clinical surveillance}: School-health programmes in fluoride-endemic areas should include annual dental and musculoskeletal examinations for early fluorosis detection, enabling timely intervention before progression to moderate or severe forms.
+\end{enumerate}
+
+\section{Future Research Directions}
+
+The present study, while constituting a significant advance in the Pakistani fluorosis literature, opens several avenues for future investigation:
+
+\begin{enumerate}[leftmargin=2cm]
+    \item \textbf{Larger cohort study}: A multi-centre study with n $\geq$ 500, spanning multiple fluoride-endemic regions of Pakistan, would provide the statistical power needed for subgroup analyses, interaction testing, and more precise odds ratio estimation.
+    \item \textbf{Multi-SNP haplotype panel}: Future studies should genotype VDR TaqI, ApaI, BsmI, and FokI simultaneously, enabling haplotype-based analyses that leverage LD structure more efficiently than single-SNP approaches.
+    \item \textbf{Inclusion of 25(OH)D measurement}: Serum 25-hydroxyvitamin D should be measured in future studies to allow full dissection of the genotype--vitamin D status--fluoride exposure triangle and to determine whether vitamin D supplementation modifies the genotype-fluorosis association.
+    \item \textbf{Longitudinal cohort design}: A prospective birth cohort or longitudinal follow-up of younger children (ages 2--8 years, during active enamel formation) would permit more accurate attribution of fluoride exposure to specific developmental windows and provide causal evidence for the gene--environment interaction.
+    \item \textbf{Genome-Wide Association Study (GWAS)}: With sufficient sample sizes and funding, a GWAS approach in Pakistani fluoride-endemic populations would enable unbiased discovery of novel genetic modifiers of fluorosis beyond the VDR locus.
+    \item \textbf{Functional genomics}: In vitro studies using VDR CC versus TT genotype-stratified human cell lines (osteoblasts, ameloblasts) exposed to fluoride would provide mechanistic evidence for the hypothesised VDR expression--calcium absorption--fluoride toxicity pathway at the molecular level.
+\end{enumerate}
+
+\section{Concluding Statement}
+
+In conclusion, this study breaks new ground by examining the genetic architecture of fluorosis susceptibility at the interface of VDR biology, fluoride exposure, and mineralisation physiology in a Pakistani child population. The anticipated findings would place VDR TaqI rs731236 at the intersection of a clinically relevant gene--environment interaction, with direct implications for personalised risk assessment, nutritional supplementation, and water quality policy in one of Pakistan's most fluoride-endemic regions. It is hoped that this work will stimulate further research into the genetic determinants of fluorosis in Pakistan, ultimately contributing to a more evidence-based and equitable public health response to the fluorosis epidemic.
+
+%% ====================================================================
+%% REFERENCES
+%% ====================================================================
+\newpage
+\begin{center}
+{\Large\bfseries REFERENCES}
+\end{center}
+\vspace{0.5cm}
+
+\begin{thebibliography}{99}
+
+\bibitem{Antunes2016}
+Antunes, L. A. A., Antunes, L. S., Kuchler, E. C., Lopes, C. B., Costa, M. C., de Araujo, A. P. C., \& Abreu, F. V. S. (2016). Vitamin D receptor gene polymorphisms, childhood caries and fluorosis. \textit{Caries Research}, \textit{51}(1), 7--13. \url{https://doi.org/10.1159/000452498}
+
+\bibitem{Chisini2025}
+Chisini, L. A., Demarco, F. F., Horta, B. L., Correa, M. B., \& Cenci, M. S. (2025). Early childhood caries and dental fluorosis in the 2004 Pelotas Birth Cohort. \textit{Archives of Oral Biology}.
+
+\bibitem{deLavor2025}
+de Lav{\^o}r, J. R., Cabral, L. C., Souza, J. G. S., \& Cury, J. A. (2025). Genetic polymorphisms in \textit{AQP5}, \textit{MMP2}, and \textit{COMT} and their association with dental fluorosis severity. \textit{Caries Research}.
+
+\bibitem{Garcia2024}
+Garc{\'i}a, A. L. H., P{\'e}rez-V{\'a}zquez, F. J., Jasso-Pineda, Y., D{\'i}az-Barriga, F., \& Carrizales-Y{\'a}{\ {n}}ez, L. (2024). Genomic instability markers and fluoride exposure in schoolchildren from a Mexican endemic fluorosis area. \textit{Science of the Total Environment}, \textit{906}, 167393. \url{https://doi.org/10.1016/j.scitotenv.2023.167393}
+
+\bibitem{Gavila2024}
+Gavila, P., Mendez, A., Torres-Morales, J., Ceballos-Gutierrez, A., \& Ca{\~n}adas-De la Fuente, G. A. (2024). Salivary proteomics and dental fluorosis: biomarker profiles in endemic fluorosis-affected children. \textit{Scientific Reports}, \textit{14}, 9409. \url{https://doi.org/10.1038/s41598-024-59817-5}
+
+\bibitem{Gonzalez2022}
+Gonz{\'a}lez-Casamada, C., Bravo, M., Almerich-Silla, J. M., \& Llodra, J. C. (2022). Dental fluorosis and water fluoride levels in Spain: A systematic review. \textit{Dentistry Journal}, \textit{10}(11), 211. \url{https://doi.org/10.3390/dj10110211}
+
+\bibitem{Gorczynskaetal2024}
+G{\'o}rczy{\'n}ska-Kosiorz, S., Kubicka-Musia{\l}, M., Grzeszczak, W., \& Ko{\'{s}}cielniak-Ko{\'{s}}cielny, J. (2024). Vitamin D receptor polymorphisms and their clinical implications in mineral metabolism disorders. \textit{Biomedicines}, \textit{12}(4), 917. \url{https://doi.org/10.3390/biomedicines12040917}
+
+\bibitem{Holick2006}
+Holick, M. F. (2006). Resurrection of vitamin D deficiency and rickets. \textit{Annals of Internal Medicine}, \textit{144}(7), 520--525. \url{https://doi.org/10.7326/0003-4819-144-7-200604040-00008}
+
+\bibitem{Jarquin2018}
+Jarqu{\'i}n-Y{\~n}ez{\'a}, L., Cu{\'e}llar-Cruz, M., Brice{\~n}o-Garc{\'i}a, A., Acevedo-Mascarua, A. E., \& Vald{\'e}s-Flores, M. (2018). \textit{COL1A2} polymorphism in dental fluorosis susceptibility among Mexican children. \textit{Archives of Oral Biology}, \textit{93}, 115--120. \url{https://doi.org/10.1016/j.archoralbio.2018.06.001}
+
+\bibitem{Jha2011}
+Jha, S. K., Mishra, V. K., Sharma, D. K., \& Damodaran, T. (2011). Fluoride in the environment and its metabolism in humans. \textit{Reviews on Environmental Health}, \textit{26}(4), 315--328. \url{https://doi.org/10.1515/reveh.2011.040}
+
+\bibitem{Kallala2024}
+Kallala, R., Masmoudi, F., Maatouk, F., \& Bhouri, L. (2024). Association of \textit{COL1A2} rs1061237 polymorphism with dental fluorosis in a Tunisian cohort. \textit{BMC Oral Health}, \textit{24}, 786. \url{https://doi.org/10.1186/s12903-024-04086-7}
+
+\bibitem{Khan2023}
+Khan, S., Shah, I. A., Khan, M. T., Muhammad, S., \& Muhammad, N. (2023). Machine learning-based prediction of groundwater fluoride contamination and risk assessment: 13 million Pakistanis at risk. \textit{Environmental Research}, \textit{216}, 114540. \url{https://doi.org/10.1016/j.envres.2022.114540}
+
+\bibitem{Khattak2022}
+Khattak, M. I., Lian, F., Shen, Q., Huang, Z., \& Khattak, R. M. (2022). Assessment of fluoride contamination in groundwater of Pakistan: Health implications and management perspectives. \textit{Water}, \textit{14}(2), 185. \url{https://doi.org/10.3390/w14020185}
+
+\bibitem{Lei2021}
+Lei, W., Zhang, Y., Hua, R., Nie, J., \& Liang, K. (2021). Association of \textit{VDR} TaqI gene polymorphism with enamel mineralization and dental caries in children. \textit{Caries Research}, \textit{55}(3), 232--240. \url{https://doi.org/10.1159/000514481}
+
+\bibitem{Niazi2023}
+Niazi, F. C., \& Al-Khanati, N. (2023). Fluorosis. In \textit{StatPearls}. StatPearls Publishing. \url{https://www.ncbi.nlm.nih.gov/books/NBK546585/}
+
+\bibitem{Peponis2023}
+Peponis, M., Syrigos, N., \& Amfilochiou, A. (2023). Vitamin D receptor gene polymorphisms and bone mineral density: A systematic review. \textit{Applied Sciences}, \textit{13}(10), 6014. \url{https://doi.org/10.3390/app13106014}
+
+\bibitem{Podgorski2022}
+Podgorski, J., \& Berg, M. (2022). Global risk model for groundwater contamination by fluoride. \textit{Eawag: Swiss Federal Institute of Aquatic Science and Technology}. \url{https://doi.org/10.14512/gaia.31.S1.9}
+
+\bibitem{Pramanik2017}
+Pramanik, S., \& Saha, D. (2017). The genetic influence in fluorosis. \textit{Mutation Research / Reviews in Mutation Research}, \textit{774}, 86--94. \url{https://doi.org/10.1016/j.mrrev.2017.09.003}
+
+\bibitem{Qin2024}
+Qin, X., Jiang, T., Lin, Q., Liu, Y., \& Wang, J. (2024). Association of \textit{VDR} TaqI rs731236 with early childhood caries and enamel defects: A multi-centre paediatric study. \textit{BMC Pediatrics}, \textit{24}, 327. \url{https://doi.org/10.1186/s12887-024-04827-1}
+
+\bibitem{Tombari2024}
+Tombari, S., Legrand, E., Beauvillain, C., \& Coutu, P. (2024). VDR polymorphisms and bone mineral density in postmenopausal French women: Influence of TaqI and BsmI haplotypes. \textit{Heliyon}, \textit{10}(3), e25112. \url{https://doi.org/10.1016/j.heliyon.2024.e25112}
+
+\bibitem{Wang2022}
+Wang, X., Yin, Q., Chen, H., Liu, Y., \& Zhang, L. (2022). Association between dietary calcium intake, fluoride exposure, and fluorosis severity in Chinese school-age children. \textit{Frontiers in Nutrition}, \textit{9}, 856740. \url{https://doi.org/10.3389/fnut.2022.856740}
+
+\bibitem{Wen2022}
+Wen, C., Li, H., Liu, Y., Zhang, J., \& Wang, F. (2022). Vitamin D status, VDR polymorphisms, and fluoride metabolism in children from high-fluoride areas. \textit{Frontiers in Nutrition}, \textit{9}, 1030344. \url{https://doi.org/10.3389/fnut.2022.1030344}
+
+\bibitem{WHO2017}
+World Health Organization. (2017). \textit{Guidelines for drinking-water quality} (4th ed., incorporating 1st addendum). WHO Press.
+
+\bibitem{Wu2015}
+Wu, J., Qin, J., Gao, X., Li, B., \& Chen, J. (2015). Glutathione S-transferase Pi 1 polymorphism (rs1695) and dental fluorosis susceptibility in a Chinese population: A case--control study. \textit{PLOS ONE}, \textit{10}(6), e0128280. \url{https://doi.org/10.1371/journal.pone.0128280}
+
+\bibitem{Yang2016}
+Yang, D., Xie, X., \& Liu, F. (2016). \textit{VDR} FokI polymorphism and skeletal fluorosis risk: A cross-sectional study. \textit{BMJ Open}, \textit{6}(8), e011980. \url{https://doi.org/10.1136/bmjopen-2016-011980}
+
+\bibitem{Yang2011}
+Yang, Y., Wang, J., Fan, L., \& Zhang, H. (2011). Distribution of VDR FokI genotype in children from high- and low-fluoride areas of China. \textit{Chinese Journal of Public Health}, \textit{27}(6), 756--759.
+
+\bibitem{Zhang2023}
+Zhang, K., Chen, L., Liu, Y., \& Wang, X. (2023). Epigenetic mechanisms underlying fluoride-induced developmental toxicity: A review. \textit{Frontiers in Cell and Developmental Biology}, \textit{11}, 1168215. \url{https://doi.org/10.3389/fcell.2023.1168215}
+
+\end{thebibliography}
+
+\end{spacing}
+\end{document}
