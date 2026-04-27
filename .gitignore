@@ -18,3 +18,16 @@ Thumbs.db
 # Editor
 .vscode/
 *.swp
+
+# LaTeX build artefacts (the .pdf is committed; intermediate files are not)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
